@@ -1,0 +1,98 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 58c1c9d33d1aa1db4bfebc698bacee3779eda945a769d584d383ebc250595237
+
+name:           Fibonacci
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/MicroserviceFib#readme>
+homepage:       https://github.com/githubuser/Fibonacci#readme
+bug-reports:    https://github.com/githubuser/Fibonacci/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/Fibonacci
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_Fibonacci
+  hs-source-dirs:
+      src
+  build-depends:
+      aeson
+    , async
+    , base >=4.7 && <5
+    , http-client
+    , mtl
+    , servant
+    , servant-client
+    , servant-client-core
+    , servant-server
+    , stm
+    , wai
+    , wai-extra
+    , warp
+  default-language: Haskell2010
+
+executable Fibonacci-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_Fibonacci
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      Fibonacci
+    , aeson
+    , async
+    , base >=4.7 && <5
+    , http-client
+    , mtl
+    , servant
+    , servant-client
+    , servant-client-core
+    , servant-server
+    , stm
+    , wai
+    , wai-extra
+    , warp
+  default-language: Haskell2010
+
+test-suite Fibonacci-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_Fibonacci
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      Fibonacci
+    , aeson
+    , async
+    , base >=4.7 && <5
+    , http-client
+    , mtl
+    , servant
+    , servant-client
+    , servant-client-core
+    , servant-server
+    , stm
+    , wai
+    , wai-extra
+    , warp
+  default-language: Haskell2010
